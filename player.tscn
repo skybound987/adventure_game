@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b068hl7483b5l"]
+
+[ext_resource type="Texture2D" uid="uid://d3qot0smobapn" path="res://assets/fighter.png" id="1_nf12m"]
+[ext_resource type="Script" path="res://player.gd" id="1_rg1m6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpuc5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nf12m")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl5g8"]
+size = Vector2(16.5, 32)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(513, 242)
+scale = Vector2(2, 2)
+script = ExtResource("1_rg1m6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cpuc5")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 7.5)
+shape = SubResource("RectangleShape2D_sl5g8")
