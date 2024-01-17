@@ -17,5 +17,3 @@ func _spawn_follower():
 	follower = follower_scene.instantiate()
 	add_child(follower)	
 
-#func _on_Player_location_update(global_position):  # position is connected from signal in player.gd and called from main.gd
-#	follower.update_target_position(global_position)
