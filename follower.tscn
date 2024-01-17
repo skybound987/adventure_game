@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://clpdc8xm3k2mh"]
+
+[ext_resource type="Texture2D" uid="uid://kwc2ku1sg20l" path="res://assets/cleric.png" id="1_4hpx1"]
+[ext_resource type="Script" path="res://follower.gd" id="1_o4s8y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tkio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4hpx1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b82s7"]
+size = Vector2(16, 31)
+
+[node name="Follower" type="CharacterBody2D"]
+script = ExtResource("1_o4s8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(136, 179)
+sprite_frames = SubResource("SpriteFrames_3tkio")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(136, 186.5)
+shape = SubResource("RectangleShape2D_b82s7")
