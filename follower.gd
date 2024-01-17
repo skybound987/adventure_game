@@ -1,25 +1,28 @@
 extends CharacterBody2D
 
 # Follower variables
-var follower_position
+var player_position
 var target_position
 var speed = 100
+var player
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	player = get_node_or_null("/root/Main/Player")  # Player location
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	follower_position = (target_position - global_position)
-	velocity = global_position.direction_to(target_position) * speed
-	if global_position.distance_to(target_position) > 3:
+	player_position = player.global_position
+	target_position = (player_position - global_position).normalized()
+	
+	if global_position.distance_to(player_position) > 3:
+		velocity = target_position * speed
 		move_and_slide()
-
 
 #	follower_position = (target_position - global_position).normalized()
 #	if global_position.distance_to(target_position) > 3:
 #		move_and_slide()
 
-func update_target_position(new_target_position):
-	target_position = new_target_position
+#func update_target_position(new_target_position):
+#	target_position = new_target_position
