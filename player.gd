@@ -10,10 +10,11 @@ func _input(event):
 	if event.is_action_pressed("mouse_1"):
 		target = get_global_mouse_position()
 
-func _process(delta):
+func _physics_process(delta):
 	velocity = global_position.direction_to(target) * speed  # moves character toward click target
 #	look_at(target)  # turns character toward click target
 	if global_position.distance_to(target) > 10:
 		move_and_slide()
 	
-		
+func start(pos):  # Initalize things for player, position, etc
+	position = pos

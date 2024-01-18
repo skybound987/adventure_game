@@ -7,13 +7,17 @@ var follower
 func _ready():
 #	var player = $Player
 #	player.player_location.connect(Callable(self, "_on_Player_location_update"))
-	_spawn_follower()
+	spawn_follower()
+	new_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	pass
 	
-func _spawn_follower():
+func spawn_follower():
 	follower = follower_scene.instantiate()
+	follower.global_position = Vector2(100,100)
 	add_child(follower)	
 
+func new_game():
+	$Player.start($PlayerPosition.global_position)
