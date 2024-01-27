@@ -9,7 +9,6 @@ script = ExtResource("1_21gqf")
 follower_scene = ExtResource("2_1vdgo")
 
 [node name="Player" parent="." instance=ExtResource("1_6mot5")]
-position = Vector2(384, 77)
 
 [node name="PlayerPosition" type="Marker2D" parent="."]
 position = Vector2(418, 131)

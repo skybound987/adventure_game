@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://clpdc8xm3k2mh"]
+[gd_scene load_steps=6 format=3 uid="uid://clpdc8xm3k2mh"]
 
-[ext_resource type="Texture2D" uid="uid://kwc2ku1sg20l" path="res://assets/cleric.png" id="1_4hpx1"]
 [ext_resource type="Script" path="res://follower.gd" id="1_o4s8y"]
+[ext_resource type="Texture2D" uid="uid://ovg2s0ju0ly7" path="res://assets/Civilian1_Move.png" id="2_ouk3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ssi4"]
+atlas = ExtResource("2_ouk3e")
+region = Rect2(0, 0, 52, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3tkio"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4hpx1")
+"texture": SubResource("AtlasTexture_3ssi4")
 }],
 "loop": true,
 "name": &"walk",
@@ -22,6 +26,7 @@ z_as_relative = false
 script = ExtResource("1_o4s8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3tkio")
 animation = &"walk"
 

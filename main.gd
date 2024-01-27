@@ -5,9 +5,7 @@ var follower
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	var player = $Player
-#	player.player_location.connect(Callable(self, "_on_Player_location_update"))
-	spawn_follower()
+#	spawn_follower()
 	new_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
