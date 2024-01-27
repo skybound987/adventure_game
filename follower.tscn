@@ -15,9 +15,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b82s7"]
-size = Vector2(16, 31)
+size = Vector2(16, 38.5)
 
 [node name="Follower" type="CharacterBody2D"]
+z_as_relative = false
 script = ExtResource("1_o4s8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -25,4 +26,6 @@ sprite_frames = SubResource("SpriteFrames_3tkio")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_b82s7")
+disabled = true

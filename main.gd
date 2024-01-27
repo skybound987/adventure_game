@@ -17,7 +17,7 @@ func _physics_process(delta):
 func spawn_follower():
 	follower = follower_scene.instantiate()
 	follower.global_position = Vector2(100,100)
-	add_child(follower)	
+	add_child(follower)
 
 func new_game():
-	$Player.start($PlayerPosition.global_position)
+	$Player.start($PlayerPosition.position)
