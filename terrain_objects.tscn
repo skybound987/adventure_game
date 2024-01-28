@@ -1,0 +1,69 @@
+[gd_scene load_steps=14 format=3 uid="uid://dl2xnfgj8qpyk"]
+
+[ext_resource type="Texture2D" uid="uid://d6n15b0uhipn" path="res://terrain/Advertising5.png" id="1_ecuni"]
+[ext_resource type="Texture2D" uid="uid://d3sdninqw1cp6" path="res://terrain/Advertising6.png" id="2_gf0hx"]
+[ext_resource type="Texture2D" uid="uid://dfta5ey8lioy0" path="res://terrain/Advertising7.png" id="3_xksiv"]
+[ext_resource type="Texture2D" uid="uid://o227nnsykeh5" path="res://terrain/Building3.png" id="4_8glqe"]
+[ext_resource type="Texture2D" uid="uid://bd2y2qjtj06qk" path="res://terrain/BuildingBlock1.png" id="5_6g5vf"]
+[ext_resource type="Texture2D" uid="uid://dqr0nvrr3rukx" path="res://terrain/BuildingBlock2.png" id="6_le1iy"]
+[ext_resource type="Texture2D" uid="uid://ejy6w27t4cly" path="res://terrain/BuildingBlock18.png" id="7_ub8y7"]
+[ext_resource type="Texture2D" uid="uid://coapdcwncygoo" path="res://terrain/BuildingBlock19.png" id="8_j2gw4"]
+[ext_resource type="Texture2D" uid="uid://qifyxx0enqn3" path="res://terrain/BuildingBlock24.png" id="9_26nyl"]
+[ext_resource type="Texture2D" uid="uid://bu2s7pikf1lmv" path="res://terrain/Road_Chunk5.png" id="10_bv57w"]
+[ext_resource type="Texture2D" uid="uid://k43i7xbad7t1" path="res://terrain/SateliteDish2.png" id="11_ephjk"]
+[ext_resource type="Texture2D" uid="uid://s372olbdnjuy" path="res://terrain/Sidewalk_Chunk2.png" id="12_u1ku7"]
+[ext_resource type="Texture2D" uid="uid://d0gwll1y10qw0" path="res://terrain/Sidewalk_Tile1.png" id="13_uyirj"]
+
+[node name="Terrain_objects" type="Node2D"]
+
+[node name="Advertising5" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("1_ecuni")
+
+[node name="Advertising6" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("2_gf0hx")
+
+[node name="Advertising7" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("3_xksiv")
+
+[node name="Building3" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("4_8glqe")
+
+[node name="BuildingBlock1" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("5_6g5vf")
+
+[node name="BuildingBlock2" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("6_le1iy")
+
+[node name="BuildingBlock18" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("7_ub8y7")
+
+[node name="BuildingBlock19" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("8_j2gw4")
+
+[node name="BuildingBlock24" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("9_26nyl")
+
+[node name="RoadChunk5" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("10_bv57w")
+
+[node name="SateliteDish2" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("11_ephjk")
+
+[node name="SidewalkChunk2" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("12_u1ku7")
+
+[node name="SidewalkTile1" type="Sprite2D" parent="."]
+position = Vector2(374, 323)
+texture = ExtResource("13_uyirj")
