@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed = 50
 var target
 var animation_direction = 0
 var mouse_position = position
@@ -21,9 +21,8 @@ func _physics_process(delta):
 	var direction = (mouse_position - global_position).normalized()
 	velocity = global_position.direction_to(mouse_position) * speed  # moves character toward click target
 	var angle = rad_to_deg(direction.angle())
-	animation_direction = get_direction_index(angle)
-	var animation_name = ""
-#	look_at(target)  # turns character toward click target
+	animation_direction = get_direction_index(angle) 
+	var animation_name = ""  # gets animation name as string
 	
 	if global_position.distance_to(mouse_position) > 10:
 		move_and_slide()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2ykx0dpi5gus"]
+[gd_scene load_steps=5 format=3 uid="uid://c2ykx0dpi5gus"]
 
 [ext_resource type="PackedScene" uid="uid://b068hl7483b5l" path="res://player.tscn" id="1_6mot5"]
 [ext_resource type="Script" path="res://main.gd" id="1_21gqf"]
 [ext_resource type="PackedScene" uid="uid://clpdc8xm3k2mh" path="res://follower.tscn" id="2_1vdgo"]
+[ext_resource type="PackedScene" uid="uid://yqsb3r5m8aio" path="res://Terrain.tscn" id="4_y8xd3"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_21gqf")
@@ -15,3 +16,5 @@ position = Vector2(418, 131)
 
 [node name="FollowerPosition" type="Marker2D" parent="."]
 position = Vector2(164, 135)
+
+[node name="Node2D" parent="." instance=ExtResource("4_y8xd3")]
