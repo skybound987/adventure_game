@@ -375,7 +375,7 @@ script = ExtResource("1_rg1m6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_564de")
-animation = &"idle0"
+animation = &"idle2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
