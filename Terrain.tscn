@@ -165,7 +165,7 @@ sources/1 = SubResource("TileSetAtlasSource_i10od")
 sources/2 = SubResource("TileSetAtlasSource_441bb")
 sources/3 = SubResource("TileSetAtlasSource_iuai1")
 
-[node name="terrain" type="TileMap"]
+[node name="Tilemap2D" type="TileMap"]
 y_sort_enabled = true
 texture_filter = 1
 tile_set = SubResource("TileSet_tagw1")
