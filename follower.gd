@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Follower variables
-var speed = 49.0
+var speed = 50.0
 var start_moving = false
 var player_position
 var target_position
@@ -10,8 +10,7 @@ var target_position
 var idle_animations = ["idle0", "idle1", "idle2", "idle3", "idle4", "idle5", "idle6", "idle7"]
 var walk_animations = ["walk0", "walk1", "walk2", "walk3", "walk4", "walk5", "walk6", "walk7"]
 
-func _ready():
-	$Timer.start()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
