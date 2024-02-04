@@ -32,7 +32,6 @@ func _physics_process(delta):
 		velocity = direction * speed
 		is_moving = true
 		move_and_slide()
-		print("Velocity is: ", velocity.length())
 		
 	if is_moving:
 		animation_name = walk_animations[animation_direction]

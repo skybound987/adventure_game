@@ -374,6 +374,8 @@ z_as_relative = false
 script = ExtResource("1_o4s8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3tkio")
 animation = &"walk7"

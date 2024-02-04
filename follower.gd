@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Follower variables
-var speed = 100.0
+var speed = 50.0
 var player_position
 var target_position
 @onready var player_node = get_node_or_null("/root/Main/Player")
@@ -11,25 +11,25 @@ var walk_animations = ["walk0", "walk1", "walk2", "walk3", "walk4", "walk5", "wa
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
+	var is_moving = false
 	player_position = player_node.position
 	target_position = (player_position - global_position).normalized()
-	velocity = Vector2.ZERO
 	
 	var angle = rad_to_deg(target_position.angle())
 	var animation_direction = get_direction_index(angle) 
 	var animation_name = ""  #gets animation name as string
 	
 	if global_position.distance_to(player_position) > 45:
+		await get_tree().create_timer(1.0).timeout
 		velocity = target_position * speed
+		is_moving = true
 		move_and_slide()
-		print("Follower Velocity: ", velocity.length())
 		
 #	elif global_position.distance_to(player_position) < 25:
 #		velocity = -target_position * speed
 #		move_and_slide()
 	
-	if velocity.length() > 1:
+	if is_moving:
 		animation_name = walk_animations[animation_direction]
 	else:
 		animation_name = idle_animations[animation_direction]
@@ -41,3 +41,4 @@ func get_direction_index(angle):
 		angle += 360
 	var direction_index = int(angle / 45) % 8
 	return direction_index
+
