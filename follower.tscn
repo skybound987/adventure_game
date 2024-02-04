@@ -384,3 +384,10 @@ animation = &"walk7"
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_b82s7")
 disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.277
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
