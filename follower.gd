@@ -14,22 +14,22 @@ func _physics_process(delta):
 	
 	player_position = player_node.position
 	target_position = (player_position - global_position).normalized()
-	velocity = target_position * speed
+	velocity = Vector2.ZERO
 	
-	var is_moving = false
 	var angle = rad_to_deg(target_position.angle())
 	var animation_direction = get_direction_index(angle) 
 	var animation_name = ""  #gets animation name as string
 	
 	if global_position.distance_to(player_position) > 45:
+		velocity = target_position * speed
 		move_and_slide()
-		is_moving = true
-	elif global_position.distance_to(player_position) < 25:
-		velocity = -target_position * speed
-		move_and_slide()
-		is_moving = true
+		print("Follower Velocity: ", velocity.length())
+		
+#	elif global_position.distance_to(player_position) < 25:
+#		velocity = -target_position * speed
+#		move_and_slide()
 	
-	if is_moving:
+	if velocity.length() > 1:
 		animation_name = walk_animations[animation_direction]
 	else:
 		animation_name = idle_animations[animation_direction]

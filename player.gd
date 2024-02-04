@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal player_moving
+signal player_stopped
+
 var speed = 50
 var target
 var animation_direction = 0
@@ -19,14 +22,17 @@ func _input(event):
 func _physics_process(delta):
 	var is_moving = false
 	var direction = (mouse_position - global_position).normalized()
-	velocity = global_position.direction_to(mouse_position) * speed  # moves character toward click target
 	var angle = rad_to_deg(direction.angle())
 	animation_direction = get_direction_index(angle) 
 	var animation_name = ""  # gets animation name as string
+	velocity = Vector2.ZERO
+#	print("Standing Still : ", velocity.length())
 	
-	if global_position.distance_to(mouse_position) > 10:
-		move_and_slide()
+	if global_position.distance_to(mouse_position) > 10:  # move player
+		velocity = direction * speed
 		is_moving = true
+		move_and_slide()
+		print("Velocity is: ", velocity.length())
 		
 	if is_moving:
 		animation_name = walk_animations[animation_direction]
@@ -42,10 +48,31 @@ func start(pos):  # Initalize things for player, position, etc
 
 
 func get_direction_index(angle):
+	# Ensure angle is positive
 	if angle < 0:
 		angle += 360
-	var direction_index = int(angle / 45) % 8
-	return direction_index
+
+		# Adjust thresholds for NW and SE
+	if angle >= 337.5 or angle < 22.5:
+		return 0  # East
+	elif angle < 67.5:  # Was 45, adjusted for SE
+		return 1  # SE, making SE more sensitive
+	elif angle < 112.5:
+		return 2  # South
+	elif angle < 157.5:
+		return 3  # SW
+	elif angle < 202.5:
+		return 4  # West
+	elif angle < 247.5:  # Was 225, adjusted for NW
+		return 5  # NW, making NW more sensitive
+	elif angle < 292.5:
+		return 6  # North
+	else:  # This captures up to 337.5, making NE more sensitive
+		return 7  # NE
+
+
+
+
 	
 
 	

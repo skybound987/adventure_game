@@ -62,7 +62,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_pwuq2"]
 tile_shape = 1
-tile_size = Vector2i(32, 16)
+tile_size = Vector2i(32, 17)
 sources/0 = SubResource("TileSetAtlasSource_r0bbu")
 
 [node name="Tilemap2D" type="TileMap"]

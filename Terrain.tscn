@@ -169,6 +169,7 @@ sources/3 = SubResource("TileSetAtlasSource_iuai1")
 y_sort_enabled = true
 texture_filter = 1
 tile_set = SubResource("TileSet_tagw1")
+cell_quadrant_size = 32
 format = 2
 layer_0/name = "0"
 layer_0/y_sort_enabled = true
