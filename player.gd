@@ -6,6 +6,7 @@ var target
 var animation_direction = 0
 var mouse_position = position
 
+
 var idle_animations = ["idle0", "idle1", "idle2", "idle3", "idle4", "idle5", "idle6", "idle7"]
 var walk_animations = ["walk0", "walk1", "walk2", "walk3", "walk4", "walk5", "walk6", "walk7"]
 
@@ -18,18 +19,41 @@ func _input(event):
 
 func _physics_process(delta):
 	var is_moving = false
-	var direction = (mouse_position - global_position).normalized()
-	var angle = rad_to_deg(direction.angle())
-	animation_direction = get_direction_index(angle) 
+#	var direction = (mouse_position - global_position)
+#	var angle = rad_to_deg(direction.angle())
 	var animation_name = ""  # gets animation name as string
-	velocity = Vector2.ZERO
-#	print("Standing Still : ", velocity.length())
 	
-	if global_position.distance_to(mouse_position) > 10:  # move player
-		velocity = direction * speed
+	
+	velocity = Vector2.ZERO
+	
+	if Input.is_action_pressed("move_up"):
+		velocity.y -= 1
 		is_moving = true
-		move_and_slide()
 		
+	if Input.is_action_pressed("move_down"):
+		velocity.y += 1
+		is_moving = true
+
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= 1
+		is_moving = true
+		
+	if Input.is_action_pressed("move_right"):
+		velocity.x += 1
+		is_moving = true
+	
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+	
+#	if global_position.distance_to(mouse_position) > 10:  # move player
+#		velocity = direction.normalized() * speed
+#		is_moving = true
+#		move_and_slide()
+#		print("ANGLE : ", angle)
+	
+	var angle = rad_to_deg(velocity.angle())
+	animation_direction = get_direction_index(angle)
+	
 	if is_moving:
 		animation_name = walk_animations[animation_direction]
 	else:
@@ -37,7 +61,8 @@ func _physics_process(delta):
 	
 	$AnimatedSprite2D.play(animation_name)
 	
-	
+
+		
 func start(pos):  # Initalize things for player, position, etc
 	position = pos
 	target = pos
