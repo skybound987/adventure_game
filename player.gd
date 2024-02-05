@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-signal player_moving
-signal player_stopped
 
 var speed = 50
 var target
@@ -12,7 +10,6 @@ var idle_animations = ["idle0", "idle1", "idle2", "idle3", "idle4", "idle5", "id
 var walk_animations = ["walk0", "walk1", "walk2", "walk3", "walk4", "walk5", "walk6", "walk7"]
 
 func _ready():
-#	animation_init = $AnimatedSprite2D
 	pass
 
 func _input(event):

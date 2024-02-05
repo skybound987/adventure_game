@@ -367,9 +367,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u3ns2"]
+radius = 4.0
+height = 12.0
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_rg1m6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -379,5 +382,5 @@ sprite_frames = SubResource("SpriteFrames_564de")
 animation = &"idle7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 4)
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_u3ns2")

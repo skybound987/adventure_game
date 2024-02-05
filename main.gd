@@ -6,7 +6,6 @@ var follower
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_follower()
-	new_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -17,5 +16,4 @@ func spawn_follower():
 	follower.global_position = Vector2(100,100)
 	add_child(follower)
 
-func new_game():
-	$Player.start($PlayerPosition.position)
+	
