@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://oxohg05q3jk1"]
+
+[node name="command" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 178.0
+offset_top = 202.0
+offset_right = 453.0
+offset_bottom = 290.0
+
+[node name="Attack" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 177.0
+offset_top = 7.0
+offset_right = 224.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 12
+text = "ATTACK"
+
+[node name="Magic" type="Label" parent="Panel"]
+texture_filter = 1
+offset_left = 177.0
+offset_top = 29.0
+offset_right = 224.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 12
+text = "MAGIC"
+
+[node name="Item" type="Label" parent="Panel"]
+texture_filter = 1
+offset_left = 178.0
+offset_top = 52.0
+offset_right = 225.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 12
+text = "ITEM"

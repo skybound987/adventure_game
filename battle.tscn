@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://0dejrklg185x"]
+[gd_scene load_steps=3 format=3 uid="uid://0dejrklg185x"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://battle.gd" id="1_tp4or"]
+[ext_resource type="PackedScene" uid="uid://oxohg05q3jk1" path="res://command.tscn" id="2_t2yhi"]
+
+[node name="BattleManager" type="Node2D"]
+script = ExtResource("1_tp4or")
+command_scene = ExtResource("2_t2yhi")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Character1_Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Enemy1_Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
