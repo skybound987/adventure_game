@@ -10,8 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func display_command_window():
-	pass
+
 
 
 #func floating_combat_damage(hit_points, duration = 1.0):

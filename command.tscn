@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://oxohg05q3jk1"]
+[gd_scene load_steps=5 format=3 uid="uid://oxohg05q3jk1"]
 
 [ext_resource type="Script" path="res://command.gd" id="1_w8a1u"]
+
+[sub_resource type="Gradient" id="Gradient_e0yrh"]
+offsets = PackedFloat32Array(0, 0.487805, 0.674797, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.214327, 0.52184, 0.236071, 1, 0.270588, 0.658824, 0.298039, 1, 0, 1, 0.352941, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8c0gf"]
+gradient = SubResource("Gradient_e0yrh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rue7s"]
+texture = SubResource("GradientTexture2D_8c0gf")
 
 [node name="command" type="Node2D"]
 script = ExtResource("1_w8a1u")
@@ -38,3 +48,18 @@ offset_right = 225.0
 offset_bottom = 72.0
 theme_override_font_sizes/font_size = 12
 text = "ITEM"
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 147.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 0.701961, 1)
+theme_override_colors/font_shadow_color = Color(0.490196, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxTexture_rue7s")
+max_value = 10.0
+show_percentage = false

@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://0dejrklg185x"]
+[gd_scene load_steps=5 format=3 uid="uid://0dejrklg185x"]
 
 [ext_resource type="Script" path="res://battle.gd" id="1_tp4or"]
-[ext_resource type="PackedScene" uid="uid://oxohg05q3jk1" path="res://command.tscn" id="2_t2yhi"]
+
+[sub_resource type="Gradient" id="Gradient_1pthe"]
+offsets = PackedFloat32Array(0, 0.487805, 0.674797, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.214327, 0.52184, 0.236071, 1, 0.270588, 0.658824, 0.298039, 1, 0, 1, 0.352941, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4he6l"]
+gradient = SubResource("Gradient_1pthe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ag2y6"]
+texture = SubResource("GradientTexture2D_4he6l")
 
 [node name="BattleManager" type="Node2D"]
 script = ExtResource("1_tp4or")
-command_scene = ExtResource("2_t2yhi")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 
@@ -19,3 +27,53 @@ autostart = true
 
 [node name="WindowPosition" type="Marker2D" parent="."]
 position = Vector2(136, 207)
+
+[node name="CommandWindow" type="Panel" parent="."]
+offset_right = 275.0
+offset_bottom = 88.0
+
+[node name="Attack" type="Label" parent="CommandWindow"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 177.0
+offset_top = 7.0
+offset_right = 224.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 12
+text = "ATTACK"
+
+[node name="Magic" type="Label" parent="CommandWindow"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 177.0
+offset_top = 29.0
+offset_right = 224.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 12
+text = "MAGIC"
+
+[node name="Item" type="Label" parent="CommandWindow"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 178.0
+offset_top = 52.0
+offset_right = 225.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 12
+text = "ITEM"
+
+[node name="ProgressBar" type="ProgressBar" parent="CommandWindow"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 147.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 0.701961, 1)
+theme_override_colors/font_shadow_color = Color(0.490196, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxTexture_ag2y6")
+max_value = 10.0
+step = 0.0
+show_percentage = false
