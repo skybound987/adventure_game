@@ -5,22 +5,22 @@ extends Node2D
 var character1_ready = false
 var hit_points = 0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	floating_combat_damage(hit_points)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	command_window_display()
 	pass
 
-func floating_combat_damage(hit_points, duration = 1.0):
-	$Damage.text = str(hit_points)
-	var tween = get_tree().create_tween()
+func command_window_display():
+	var command_window_instance = command_scene.instantiate()
+	command_window_instance.position = $WindowPosition.global_position
+	get_tree().root.add_child(command_window_instance)
+	command_window_instance.display_command_window()
 	
-	tween.tween_property($Damage, "modulate", Color.RED, .2)
-	tween.tween_property($Damage, "scale", Vector2(), .2)
-	tween.tween_callback($Damage.queue_free)
 
 
 func on_Character1_Timer_timeout(index):

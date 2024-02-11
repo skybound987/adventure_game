@@ -16,3 +16,6 @@ autostart = true
 [node name="Enemy1_Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="WindowPosition" type="Marker2D" parent="."]
+position = Vector2(136, 207)

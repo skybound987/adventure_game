@@ -1,12 +1,13 @@
-[gd_scene format=3 uid="uid://oxohg05q3jk1"]
+[gd_scene load_steps=2 format=3 uid="uid://oxohg05q3jk1"]
+
+[ext_resource type="Script" path="res://command.gd" id="1_w8a1u"]
 
 [node name="command" type="Node2D"]
+script = ExtResource("1_w8a1u")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 178.0
-offset_top = 202.0
-offset_right = 453.0
-offset_bottom = 290.0
+offset_right = 275.0
+offset_bottom = 88.0
 
 [node name="Attack" type="Label" parent="Panel"]
 texture_filter = 1
@@ -20,6 +21,7 @@ text = "ATTACK"
 
 [node name="Magic" type="Label" parent="Panel"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 177.0
 offset_top = 29.0
 offset_right = 224.0
@@ -29,6 +31,7 @@ text = "MAGIC"
 
 [node name="Item" type="Label" parent="Panel"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 178.0
 offset_top = 52.0
 offset_right = 225.0
