@@ -366,8 +366,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b82s7"]
-size = Vector2(16, 38.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwyho"]
+radius = 4.0
+height = 10.0
 
 [node name="Follower" type="CharacterBody2D"]
 z_as_relative = false
@@ -381,9 +382,8 @@ sprite_frames = SubResource("SpriteFrames_3tkio")
 animation = &"walk7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-shape = SubResource("RectangleShape2D_b82s7")
-disabled = true
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_nwyho")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

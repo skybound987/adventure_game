@@ -13,9 +13,9 @@ var walk_animations = ["walk0", "walk1", "walk2", "walk3", "walk4", "walk5", "wa
 func _ready():
 	pass
 
-func _input(event):
-	if event.is_action_pressed("mouse_1"):
-		mouse_position = get_global_mouse_position()
+#func _input(event):
+#	if event.is_action_pressed("mouse_1"):
+#		mouse_position = get_global_mouse_position()
 
 func _physics_process(delta):
 	var is_moving = false
@@ -23,9 +23,8 @@ func _physics_process(delta):
 #	var angle = rad_to_deg(direction.angle())
 	var animation_name = ""  # gets animation name as string
 	
-	
 	velocity = Vector2.ZERO
-	
+
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 		is_moving = true
@@ -41,24 +40,23 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		is_moving = true
+		
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")	
+	
+	if (direction.x != 0) and (direction.y !=0):
+		velocity = (direction * Vector2(2,1) * speed)
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	
-#	if global_position.distance_to(mouse_position) > 10:  # move player
-#		velocity = direction.normalized() * speed
-#		is_moving = true
-#		move_and_slide()
-#		print("ANGLE : ", angle)
-	
-	var angle = rad_to_deg(velocity.angle())
-	animation_direction = get_direction_index(angle)
-	
 	if is_moving:
+		move_and_slide()
+		var angle = rad_to_deg(velocity.angle())
+		animation_direction = get_direction_index(angle)
 		animation_name = walk_animations[animation_direction]
 	else:
 		animation_name = idle_animations[animation_direction]
-	
+		
 	$AnimatedSprite2D.play(animation_name)
 	
 
@@ -76,11 +74,11 @@ func get_direction_index(angle):
 		# Adjust thresholds for NW and SE
 	if angle >= 337.5 or angle < 22.5:
 		return 0  # East
-	elif angle < 67.5:  # Was 45, adjusted for SE
+	elif angle < 63.0:  # Was 45, adjusted for SE
 		return 1  # SE, making SE more sensitive
 	elif angle < 112.5:
 		return 2  # South
-	elif angle < 157.5:
+	elif angle < 153.0:
 		return 3  # SW
 	elif angle < 202.5:
 		return 4  # West
