@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 50
 var target
 var animation_direction = 0
-var mouse_position = position
+
 var is_attacking = false
 @onready var animations = $Animation
 
@@ -22,8 +22,9 @@ func _ready():
 
 func _process(delta):
 	var is_moving = false
-#	var direction = (mouse_position - global_position)
-#	var angle = rad_to_deg(direction.angle())
+	var mouse_position = get_global_mouse_position()
+	var mouse_direction = (mouse_position - global_position)
+	var mouse_angle = rad_to_deg(mouse_direction.angle())
 	var animation_name = ""  # gets animation name as string
 	var is_atacking = false
 		
@@ -46,10 +47,8 @@ func _process(delta):
 		is_moving = true
 	
 	if Input.is_action_just_pressed("mouse_1") and not is_attacking:
-#		mouse_position = get_global_mouse_position()
 		is_attacking = true
-		var angle = rad_to_deg(velocity.angle())
-		animation_direction = get_direction_index(angle)
+		animation_direction = get_direction_index(mouse_angle)
 		animation_name = attack_animations[animation_direction]
 		$Animation.play(animation_name)
 		print("attack attack attack")
@@ -65,7 +64,7 @@ func _process(delta):
 	#if is_on_stair_tile():
 		#adjust_y_bias()
 	
-	if is_moving:
+	if is_moving and not is_atacking and not $Animation.is_playing():
 		move_and_slide()
 		var angle = rad_to_deg(velocity.angle())
 		animation_direction = get_direction_index(angle)
@@ -92,17 +91,17 @@ func get_direction_index(angle):
 		angle += 360
 
 		# Adjust thresholds for NW and SE
-	if angle >= 337.5 or angle < 22.5:
+	if angle >= 355.5 or angle < 15.5:
 		return 0  # East
-	elif angle < 63.0:  # Was 45, adjusted for SE
+	elif angle < 65.0:  # Was 45, adjusted for SE
 		return 1  # SE, making SE more sensitive
-	elif angle < 112.5:
+	elif angle < 122.5:
 		return 2  # South
 	elif angle < 165.0:
 		return 3  # SW
-	elif angle < 202.5:
+	elif angle < 180.5:
 		return 4  # West
-	elif angle < 247.5:  # Was 225, adjusted for NW
+	elif angle < 240.5:  # Was 225, adjusted for NW
 		return 5  # NW, making NW more sensitive
 	elif angle < 292.5:
 		return 6  # North

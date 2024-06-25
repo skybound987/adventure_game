@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coapdcwncygoo"
-path="res://.godot/imported/BuildingBlock19.png-dd55cf130cc9e2df68aa8ade3b02d7e1.ctex"
+uid="uid://o227nnsykeh5"
+path="res://.godot/imported/Building3.png-7aecee6aebd48ebfde07a4c7bd6055ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/BuildingBlock19.png"
-dest_files=["res://.godot/imported/BuildingBlock19.png-dd55cf130cc9e2df68aa8ade3b02d7e1.ctex"]
+source_file="res://assets/terrain/Building3.png"
+dest_files=["res://.godot/imported/Building3.png-7aecee6aebd48ebfde07a4c7bd6055ba.ctex"]
 
 [params]
 

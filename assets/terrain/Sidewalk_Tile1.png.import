@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2yg4183qcs8d"
-path="res://.godot/imported/isometric-sandbox-sheet.png-68f1e3ea3815ebb1746bdb45bf2c0b47.ctex"
+uid="uid://d0gwll1y10qw0"
+path="res://.godot/imported/Sidewalk_Tile1.png-f68d32598419798c416b65f71e17500c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/isometric-sandbox-sheet.png"
-dest_files=["res://.godot/imported/isometric-sandbox-sheet.png-68f1e3ea3815ebb1746bdb45bf2c0b47.ctex"]
+source_file="res://assets/terrain/Sidewalk_Tile1.png"
+dest_files=["res://.godot/imported/Sidewalk_Tile1.png-f68d32598419798c416b65f71e17500c.ctex"]
 
 [params]
 

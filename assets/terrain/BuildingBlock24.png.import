@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu2s7pikf1lmv"
-path="res://.godot/imported/Road_Chunk5.png-1e1527b1a2412d24918bb92fc8e1685d.ctex"
+uid="uid://qifyxx0enqn3"
+path="res://.godot/imported/BuildingBlock24.png-af82c1f355b4b28da7ee60aed49d4462.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/Road_Chunk5.png"
-dest_files=["res://.godot/imported/Road_Chunk5.png-1e1527b1a2412d24918bb92fc8e1685d.ctex"]
+source_file="res://assets/terrain/BuildingBlock24.png"
+dest_files=["res://.godot/imported/BuildingBlock24.png-af82c1f355b4b28da7ee60aed49d4462.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd2y2qjtj06qk"
-path="res://.godot/imported/BuildingBlock1.png-5b62cbf6c739baa04c60f89f68361d6a.ctex"
+uid="uid://dfta5ey8lioy0"
+path="res://.godot/imported/Advertising7.png-47b6fc9928c755327ec07ca1fd11cbbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/BuildingBlock1.png"
-dest_files=["res://.godot/imported/BuildingBlock1.png-5b62cbf6c739baa04c60f89f68361d6a.ctex"]
+source_file="res://assets/terrain/Advertising7.png"
+dest_files=["res://.godot/imported/Advertising7.png-47b6fc9928c755327ec07ca1fd11cbbf.ctex"]
 
 [params]
 

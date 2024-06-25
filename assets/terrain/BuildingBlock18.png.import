@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s372olbdnjuy"
-path="res://.godot/imported/Sidewalk_Chunk2.png-cd43ed06ac49a50586362f0c901d7309.ctex"
+uid="uid://ejy6w27t4cly"
+path="res://.godot/imported/BuildingBlock18.png-d4439c477de25a7db36a4bfd38cb2fcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/Sidewalk_Chunk2.png"
-dest_files=["res://.godot/imported/Sidewalk_Chunk2.png-cd43ed06ac49a50586362f0c901d7309.ctex"]
+source_file="res://assets/terrain/BuildingBlock18.png"
+dest_files=["res://.godot/imported/BuildingBlock18.png-d4439c477de25a7db36a4bfd38cb2fcc.ctex"]
 
 [params]
 

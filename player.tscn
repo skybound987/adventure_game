@@ -1,8 +1,11 @@
-[gd_scene load_steps=88 format=3 uid="uid://b068hl7483b5l"]
+[gd_scene load_steps=91 format=3 uid="uid://b068hl7483b5l"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rg1m6"]
 [ext_resource type="Texture2D" uid="uid://d4djb1eljmue3" path="res://assets/Civilian1(black)_Move.png" id="2_flme3"]
 [ext_resource type="Texture2D" uid="uid://c8jwxwgsa6l2e" path="res://assets/Civilian1(black)_Attack(Weapon1).png" id="2_ulhj3"]
+[ext_resource type="AudioStream" uid="uid://dq1k25kl7sxs0" path="res://assets/sound/atk_sword_1.wav" id="4_tuwou"]
+[ext_resource type="AudioStream" uid="uid://keej5fennh6h" path="res://assets/sound/atk_sword_2.wav" id="5_8mc28"]
+[ext_resource type="AudioStream" uid="uid://d3fuqynasbhnk" path="res://assets/sound/atk_sword_3.wav" id="6_iqqwn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0387p"]
 atlas = ExtResource("2_ulhj3")
@@ -635,8 +638,24 @@ animations = [{
 radius = 3.0
 height = 8.0
 
+[sub_resource type="Animation" id="Animation_n7aa5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_mto3p"]
 resource_name = "attack0"
+length = 0.8425
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -661,9 +680,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"attack0"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_1:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_thup8"]
 resource_name = "attack1"
+length = 0.749
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -688,24 +720,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"attack1"]
 }
-
-[sub_resource type="Animation" id="Animation_n7aa5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_2jx62"]
 resource_name = "attack2"
+length = 0.737
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -730,9 +760,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"attack2"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_45m33"]
 resource_name = "attack3"
+length = 0.742
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -756,6 +799,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"attack3"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_3ac33"]
@@ -784,6 +839,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_1:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ac326"]
 resource_name = "attack5"
@@ -810,6 +877,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_x3hp6"]
@@ -838,6 +917,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_kp2g5"]
 resource_name = "attack7"
@@ -865,6 +956,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("atk_sword_2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vbq0o"]
 _data = {
@@ -888,7 +991,7 @@ script = ExtResource("1_rg1m6")
 z_index = 5
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_564de")
-animation = &"attack0"
+animation = &"attack7"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -901,5 +1004,15 @@ shape = SubResource("CapsuleShape2D_u3ns2")
 libraries = {
 "": SubResource("AnimationLibrary_vbq0o")
 }
+speed_scale = 2.0
+
+[node name="atk_sword_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tuwou")
+
+[node name="atk_sword_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8mc28")
+
+[node name="atk_sword_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_iqqwn")
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

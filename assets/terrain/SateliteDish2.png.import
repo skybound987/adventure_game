@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qifyxx0enqn3"
-path="res://.godot/imported/BuildingBlock24.png-6dfe6a0991a069ed3c6a47950adc539e.ctex"
+uid="uid://k43i7xbad7t1"
+path="res://.godot/imported/SateliteDish2.png-4ac99a26122049f763151ed255a70595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/BuildingBlock24.png"
-dest_files=["res://.godot/imported/BuildingBlock24.png-6dfe6a0991a069ed3c6a47950adc539e.ctex"]
+source_file="res://assets/terrain/SateliteDish2.png"
+dest_files=["res://.godot/imported/SateliteDish2.png-4ac99a26122049f763151ed255a70595.ctex"]
 
 [params]
 

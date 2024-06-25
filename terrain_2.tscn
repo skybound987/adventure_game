@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkhks2tdyp57f"]
 
-[ext_resource type="Texture2D" uid="uid://d2yg4183qcs8d" path="res://terrain/isometric-sandbox-sheet.png" id="1_gaf2o"]
+[ext_resource type="Texture2D" uid="uid://d2yg4183qcs8d" path="res://assets/terrain/isometric-sandbox-sheet.png" id="1_k08ml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0bbu"]
-texture = ExtResource("1_gaf2o")
+texture = ExtResource("1_k08ml")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -239,7 +239,6 @@ radius = 17.1172
 y_sort_enabled = true
 texture_filter = 1
 tile_set = SubResource("TileSet_pwuq2")
-collision_visibility_mode = 1
 format = 2
 layer_0/name = "Layer 0"
 layer_0/y_sort_enabled = true
