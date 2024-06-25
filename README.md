@@ -1,6 +1,11 @@
 <h1>Testing and Progress</h1>
 <br>
 
+<br>
+<h2>8-directional Attack Animations</h2>
+  <video src= "https://github.com/skybound987/adventure_game/assets/100818602/ff408c08-2b31-4e48-a6f3-29629f777723"></video>
+
+<br>
 <h2>8-directional Movement within a 2D Isometric Environment.</h2>
 <video src="https://github.com/skybound987/adventure_game/assets/100818602/d53fe811-4051-4136-a0b5-920f0a9702ff"></video>
 
